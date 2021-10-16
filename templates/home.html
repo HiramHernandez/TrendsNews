@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Últimas Noticias de lo que todo el Mundo esta hablando</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    
+    <div class="container">
+    <h3>De lo que todo el mundo esta hablando</h3>
+
+
+    <div class="row">
+
+        
+        {% for new in data %}
+
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem; color: rgb(49, 37, 22);">
+                <div class="card-body">
+                  <h5 class="card-title">{{ new.title }}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted"> {{ new.when }}</h6>
+                  <p class="card-text">{{ new.description }}</p>
+                  <a href={{ new.link }} class="card-link" target="_blank">Visita la nota completa</a>
+                </div>
+            </div>
+        </div>
+       
+
+        
+        {% endfor %}
+
+    </div>
+
+    </div>
+    
+
+
+
+</body>
+</html>
